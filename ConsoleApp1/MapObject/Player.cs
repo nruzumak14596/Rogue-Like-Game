@@ -106,7 +106,7 @@ namespace RogueLikeGame
             {
                 DungeonRoom.currentDungeonRoom.RemoveFillObject(this);
 
-                EventLog.doEvent("Ебать ты далбоеб, земля тебе пухом братишка", ConsoleColor.DarkRed);
+                EventLog.doEvent("Смерть пришла за тобой!", ConsoleColor.DarkRed);
 
                 Game.Initialization();
             }
