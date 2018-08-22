@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9676BB3D-438F-4FBC-8EA7-B593FBA95A86}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>RogueLikeGame</RootNamespace>
+    <AssemblyName>RogueLikeGame</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Engine\ActionControl.cs" />
+    <Compile Include="Engine\Graphics\UserInterface.cs" />
+    <Compile Include="Engine\Log\EventLog.cs" />
+    <Compile Include="Engine\Log\LogObject.cs" />
+    <Compile Include="Factory\LevelDifficults\NormalDifficult.cs" />
+    <Compile Include="Factory\Generators\LevelGenerator.cs" />
+    <Compile Include="Framework\Variables.cs" />
+    <Compile Include="Interfaces\IDestroy.cs" />
+    <Compile Include="Interfaces\IDifficultsGenerator.cs" />
+    <Compile Include="Interfaces\IStats.cs" />
+    <Compile Include="MapObject\Doors\BaseDoor.cs" />
+    <Compile Include="MapObject\Other\EmptyFloor.cs" />
+    <Compile Include="MapObject\Enemys\BaseEnemy.cs" />
+    <Compile Include="Interfaces\IMapObject.cs" />
+    <Compile Include="Engine\KeybordCommand.cs" />
+    <Compile Include="MapObject\Doors\ExitDoor.cs" />
+    <Compile Include="MapObject\Enemys\Dwarf.cs" />
+    <Compile Include="MapObject\Enemys\Skeleton.cs" />
+    <Compile Include="MapObject\Player.cs" />
+    <Compile Include="MapObject\Other\RoomWall.cs" />
+    <Compile Include="MapObject\Doors\StartRoom.cs" />
+    <Compile Include="Framework\Point.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="MapObject\Traps\BaseTrap.cs" />
+    <Compile Include="MapObject\Traps\Trap.cs" />
+    <Compile Include="MapObject\Weapons\MeleeWeapon\Axe.cs" />
+    <Compile Include="MapObject\Weapons\BaseWeapon.cs" />
+    <Compile Include="MapObject\Weapons\MeleeWeapon\Dagger.cs" />
+    <Compile Include="MapObject\Weapons\MeleeWeapon\Fists.cs" />
+    <Compile Include="MapObject\Weapons\MeleeWeapon\Hammer.cs" />
+    <Compile Include="MapObject\Weapons\MeleeWeapon\Sword.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Factory\DungeonRoom.cs" />
+    <Compile Include="Engine\Graphics\ViewOnConsole.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LevelSystems.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
