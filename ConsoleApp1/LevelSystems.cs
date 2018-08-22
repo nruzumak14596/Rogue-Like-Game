@@ -40,7 +40,7 @@ namespace RogueLikeGame.LevelSystems
                 LevelUp();
             }
         }
-
+	//check
         private void LevelUp()
         {
             player.stamina += 1;
